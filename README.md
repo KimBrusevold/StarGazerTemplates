@@ -51,8 +51,8 @@ The templates would exist in its own folder structure in the project. The folder
 - program.cs
 - MyWebApp.csproj
 - Pages
- - Index.gazer
- - About gazer
+  - Index.gazer
+  - About gazer
 
 In your minimal api, you should be able to render index template like this: 
 

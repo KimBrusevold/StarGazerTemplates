@@ -44,7 +44,7 @@ Render("Hello World");
 ```
 The returned string from render method would be the same as in the first example.
 
-#### 3.
+#### 3. Multiple parameters
 
 If multiple parameters are defined, they should be provided to the render method in the order they appear in the template, or as named parameters to the render method. 
 ```razor
@@ -63,6 +63,37 @@ If multiple parameters are defined, they should be provided to the render method
 Render("Hello World", "This is the body of the page");
 Render(title: "Hello World", body: "This is the body of the page");
 ```
+
+#### 4. Class or struct Parameters
+
+One way we could do this is to copy Razor pages with a @model **className**. This could only appear on top/before tempalte content. Would suggest that we don't use Model.propertyname, but only do .propertyname:
+Say we have IndexModel.cs (I ignore possible namespace trouble in this example. For later consideration).
+```cs
+public IndexModel
+{
+  public string Title { get; set; }
+  public string Body { get; set; }
+}
+```
+You could define the input class and access properties like this
+```razor
+@model MyHtmlTemplateClass
+<html>
+<head>
+</head>
+<body>
+<h1>@(.Title)</h1>
+<p>@(.Body)</h1>
+</body>
+</html>
+```
+Calling the render method would look something like this
+```cs
+IndexModel model = new(){Title = "Hello World, Body = "This is body content"}
+Render(model); 
+```
+
+
 
 ### Usage
 

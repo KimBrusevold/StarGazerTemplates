@@ -44,6 +44,26 @@ Render("Hello World");
 ```
 The returned string from render method would be the same as in the first example.
 
+#### 3.
+
+If multiple parameters are defined, they should be provided to the render method in the order they appear in the template, or as named parameters to the render method. 
+```razor
+<html>
+<head>
+</head>
+<body>
+<h1>@(title)</h1>
+<p>@(body)</h1>
+</body>
+</html>
+```
+
+```cs
+// These two should be valid ways of calling render
+Render("Hello World", "This is the body of the page");
+Render(title: "Hello World", body: "This is the body of the page");
+```
+
 ### Usage
 
 The templates would exist in its own folder structure in the project. The folder may be called "Pages".

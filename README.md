@@ -2,6 +2,12 @@
 
 ## Why
 
+It should be easy to generate strings from template files and passing parameters to the method that generates the strings. Using Razor/Blazor takes a bit of boilerplate code I'm just not a fan of. My goal is to be opinionated on what one should be able to do in a template, which hopefully should be easy to understand why a template is generated in the way it is. Big inspiration to the default Go templating and Go Templ. 
+
+A long term goal is to have type safety in the templates.
+
+## How
+Incremental source generator. The user of this templating should not need to register anything in program.cs to use this. Should only need to include the template files in the csproj.
 
 ## Design
 
